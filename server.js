@@ -38,7 +38,11 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin:  [
+      "http://localhost:5173",  // لمطابقة البيئة المحلية
+      "https://shopify-ulee.vercel.app", // رابط الـ Frontend على Vercel
+    ],
+
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
